@@ -1,20 +1,23 @@
 package peaksoft.restapilessonjava13.service;
 
+import peaksoft.restapilessonjava13.dto.SimpleResponse;
+import peaksoft.restapilessonjava13.dto.StudentRequest;
+import peaksoft.restapilessonjava13.dto.StudentResponse;
 import peaksoft.restapilessonjava13.enitity.Student;
 
 import java.util.List;
 
 public interface StudentService {
 
-    void saveStudent(Student student);
+    SimpleResponse saveStudent(StudentRequest studentRequest);
 
-    Student getStudentById(Long id);
+    StudentResponse getStudentById(Long id);
 
-    List<Student> getAllStudents();
+    List<StudentResponse> getAllStudents();
 
-    Student updateStudent(Long id, Student student);
+    SimpleResponse updateStudent(Long id, StudentRequest student);
 
-    String deleteStudent(Long id);
+    SimpleResponse deleteStudent(Long id);
 
     Student getByEmail(String email);
 
