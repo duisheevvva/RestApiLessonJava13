@@ -1,4 +1,4 @@
-package peaksoft.restapilessonjava13.dto;
+package peaksoft.restapilessonjava13.dto.studentDto;
 
 import lombok.Getter;
 import lombok.Setter;

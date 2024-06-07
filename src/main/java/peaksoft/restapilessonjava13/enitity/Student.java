@@ -35,6 +35,11 @@ public class Student {
     private LocalDate graduationDate;
     private boolean isBlocked;
 
+    @ManyToOne(cascade ={CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.REFRESH} )
+    private Group group;
+
 
 
 }

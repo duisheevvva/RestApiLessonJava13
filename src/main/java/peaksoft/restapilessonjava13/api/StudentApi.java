@@ -3,8 +3,8 @@ package peaksoft.restapilessonjava13.api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import peaksoft.restapilessonjava13.dto.SimpleResponse;
-import peaksoft.restapilessonjava13.dto.StudentRequest;
-import peaksoft.restapilessonjava13.dto.StudentResponse;
+import peaksoft.restapilessonjava13.dto.studentDto.StudentRequest;
+import peaksoft.restapilessonjava13.dto.studentDto.StudentResponse;
 import peaksoft.restapilessonjava13.enitity.Student;
 import peaksoft.restapilessonjava13.service.StudentService;
 

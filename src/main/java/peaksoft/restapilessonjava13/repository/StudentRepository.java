@@ -3,7 +3,7 @@ package peaksoft.restapilessonjava13.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import peaksoft.restapilessonjava13.dto.StudentResponse;
+import peaksoft.restapilessonjava13.dto.studentDto.StudentResponse;
 import peaksoft.restapilessonjava13.enitity.Student;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Optional;
 @Repository
 public interface StudentRepository extends JpaRepository<Student,Long> {
 
-    @Query("select new peaksoft.restapilessonjava13.dto.StudentResponse(" +
+    @Query("select new peaksoft.restapilessonjava13.dto.studentDto.StudentResponse(" +
             "s.id," +
              "concat(s.firstName,' ',s.lastName) ,"+
             "s.email," +
@@ -21,7 +21,7 @@ public interface StudentRepository extends JpaRepository<Student,Long> {
             "s.isBlocked)  from Student s")
     List<StudentResponse>findAllStudents();
 
-    @Query("select new peaksoft.restapilessonjava13.dto.StudentResponse(" +
+    @Query("select new peaksoft.restapilessonjava13.dto.studentDto.StudentResponse(" +
             "s.id," +
             "concat(s.firstName,' ',s.lastName) ,"+
             "s.email," +
