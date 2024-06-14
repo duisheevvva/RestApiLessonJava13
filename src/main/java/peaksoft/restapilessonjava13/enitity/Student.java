@@ -27,10 +27,6 @@ public class Student {
             allocationSize = 1
     )
     private Long id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String password;
     private LocalDate createdDate;
     private LocalDate graduationDate;
     private boolean isBlocked;
@@ -40,6 +36,12 @@ public class Student {
             CascadeType.REFRESH} )
     private Group group;
 
+    @OneToOne(cascade = {
+            CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.REFRESH,
+            CascadeType.REMOVE})
+    private User user;
 
 
 }

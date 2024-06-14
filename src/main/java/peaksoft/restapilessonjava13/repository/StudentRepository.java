@@ -14,21 +14,28 @@ public interface StudentRepository extends JpaRepository<Student,Long> {
 
     @Query("select new peaksoft.restapilessonjava13.dto.studentDto.StudentResponse(" +
             "s.id," +
-             "concat(s.firstName,' ',s.lastName) ,"+
-            "s.email," +
+             "concat(u.firstName,' ',u.lastName) ,"+
+            "u.email," +
             "s.createdDate," +
             "s.graduationDate," +
-            "s.isBlocked)  from Student s")
+            "s.isBlocked)  from Student s join s.user u ")
     List<StudentResponse>findAllStudents();
 
     @Query("select new peaksoft.restapilessonjava13.dto.studentDto.StudentResponse(" +
             "s.id," +
-            "concat(s.firstName,' ',s.lastName) ,"+
-            "s.email," +
+            "concat(u.firstName,' ',u.lastName) ,"+
+            "u.email," +
             "s.createdDate," +
             "s.graduationDate," +
-            "s.isBlocked)  from Student s where s.id=:id")
+            "s.isBlocked)  from Student s join s.user u where s.id=:id")
     Optional<StudentResponse> getStudentById(Long id);
 
-    Student getStudentByEmail(String email);
+    @Query("select new peaksoft.restapilessonjava13.dto.studentDto.StudentResponse( " +
+            "s.id," +
+            "concat(u.firstName,' ',u.lastName) ,"+
+            "u.email," +
+            "s.createdDate," +
+            "s.graduationDate," +
+            "s.isBlocked)  from Student s join s.user u where u.email = :email")
+    StudentResponse getStudentByEmail(String email);
 }

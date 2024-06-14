@@ -39,12 +39,13 @@ public class StudentApi {
         return studentService.getAllStudents();
     }
 
+    @PermitAll
     @GetMapping("/getEmail")
-    Student getStudentByEmail(@RequestParam String email){
+    StudentResponse getStudentByEmail(@RequestParam String email){
         return studentService.getByEmail(email);
     }
 
-
+    @PreAuthorize("hasAnyAuthority('ADMIN','INSTRUCTOR')")
     @PutMapping("/{id}")
     public SimpleResponse updateStudent(@PathVariable Long id,@RequestBody StudentRequest studentRequest){
         return studentService.updateStudent(id,studentRequest);
