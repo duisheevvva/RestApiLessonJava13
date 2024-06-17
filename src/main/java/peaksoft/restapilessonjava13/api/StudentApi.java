@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import peaksoft.restapilessonjava13.dto.SimpleResponse;
 import peaksoft.restapilessonjava13.dto.studentDto.StudentRequest;
 import peaksoft.restapilessonjava13.dto.studentDto.StudentResponse;
-import peaksoft.restapilessonjava13.enitity.Student;
 import peaksoft.restapilessonjava13.service.StudentService;
 
 import java.util.List;
